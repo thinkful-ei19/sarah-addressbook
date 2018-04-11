@@ -1,10 +1,22 @@
 import React from 'react'
 import './form.css'
 
-function Form() {
-  console.log('form');
+
+
+function Form(props) {
+
+  console.log (props);
   return (
-    <form>
+    <div>
+      <h1>{props.name}</h1>
+    <form onSubmit={(event) => {
+      event.preventDefault()
+      console.log('clicked')
+      let contact = event.target.contactName.value
+
+      console.log(contact);
+      }
+    }>
       <label htmlFor="contactName">Contact Name</label>
       <input type="text" name="contactName" />
       <label htmlFor="streetAddress">Street Address</label>
@@ -15,6 +27,7 @@ function Form() {
       <input type="text" name="state" />
       <button>Add Contact</button>
     </form>  
+    </div>
   );
 }
 
