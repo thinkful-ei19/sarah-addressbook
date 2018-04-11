@@ -12,11 +12,18 @@ function Form(props) {
     <form onSubmit={(event) => {
       event.preventDefault()
       console.log('clicked')
-      let contact = event.target.contactName.value
-
+      let contact = 
+      // event.target.contactName.value
+      {
+        name: event.target.contactName.value, 
+        street: event.target.streetAddress.value,
+        city: event.target.city.value,
+        state: event.target.state.value
+      }
       console.log(contact);
       }
     }>
+
       <label htmlFor="contactName">Contact Name</label>
       <input type="text" name="contactName" />
       <label htmlFor="streetAddress">Street Address</label>

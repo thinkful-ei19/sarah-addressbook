@@ -25,7 +25,7 @@ class App extends Component {
           <h1 className="App-title">My Address Book</h1>
         </header>
         <Form name="Add New Contact" add={(contact) => this.addContact(contact)} />
-        <AddressList name="My Contacts" />
+        <AddressList name="My Contacts" items={this.state.contacts} />
       </div>
     );
   }
