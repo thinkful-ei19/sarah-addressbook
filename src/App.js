@@ -18,6 +18,13 @@ class App extends Component {
     })
   }
 
+  deleteContact(index) {
+    this.state.contacts.splice(index,1);
+    this.setState({
+      contacts: this.state.contacts
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -25,7 +32,7 @@ class App extends Component {
           <h1 className="App-title">My Address Book</h1>
         </header>
         <Form name="Add New Contact" add={(contact) => this.addContact(contact)} />
-        <AddressList name="My Contacts" items={this.state.contacts} />
+        <AddressList name="My Contacts" items={this.state.contacts} delete={index => this.deleteContact(index)} />
       </div>
     );
   }
