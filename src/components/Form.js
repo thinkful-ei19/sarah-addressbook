@@ -20,11 +20,17 @@ function Form(props) {
         city: event.target.city.value,
         state: event.target.state.value
       }
-      console.log(contact);
+
+      props.add(contact);
+      event.target.contactName.value = '';
+      event.target.streetAddress.value = '';
+      event.target.city.value = '';
+      event.target.state.value = '';
+
       }
     }>
 
-      <label htmlFor="contactName">Contact Name</label>
+      <label htmlFor="contactName" className="contactName">Contact Name</label>
       <input type="text" name="contactName" />
       <label htmlFor="streetAddress">Street Address</label>
       <input type="text" name="streetAddress" />

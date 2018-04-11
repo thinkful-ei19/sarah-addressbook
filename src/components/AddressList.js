@@ -5,7 +5,7 @@ function AddressList(props) {
   // console.log(props);
   const contacts = props.items.map((contact, index) => (
     <li key={index}>
-      {contact}
+      <strong>{contact.name + ':'}</strong> {contact.street} {contact.city +','} {contact.state}
     </li>
     )
   )
